@@ -60,17 +60,10 @@ nav {
   text-decoration: none;
 }
 
-.logo-icon {
-  width: 40px;
-  height: 40px;
-  background: linear-gradient(135deg, var(--secondary), var(--primary));
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.3rem;
+.logo-pic {
+  width: 60px;
+  height: fit-content;
 }
-
 .nav-links {
   display: flex;
   gap: 3rem;
