@@ -10,6 +10,7 @@
     />
     <link rel="stylesheet" href="style.css" />
   </head>
+  <script src="https://unpkg.com/lucide@latest"></script>
   <body>
     <!-- Header -->
     <header id="header">
@@ -184,57 +185,95 @@
           <span class="section-badge">TÍNH NĂNG</span>
           <h2 class="section-title">Tính năng nổi bật MVP</h2>
           <p class="section-description">
-            Mọi công cụ bạn cần để mua bán tài liệu học tập một cách dễ dàng
+            Các chức năng cốt lõi giúp sinh viên mua bán tài liệu học tập dễ
+            dàng
           </p>
         </div>
-        <div class="features-grid">
-          <div class="feature-card">
-            <div class="icon-wrapper">🏠</div>
-            <h3>Bảng tin sản phẩm</h3>
-            <p>
-              Xem danh sách tài liệu đang được rao bán với thông tin chi tiết,
-              hình ảnh và giá cả rõ ràng, cập nhật liên tục.
-            </p>
+
+        <div class="features-list">
+          <!-- Feature 1 -->
+          <div class="feature-item">
+            <div class="feature-content">
+              <div class="feature-icon">
+                <i data-lucide="layout-grid"></i>
+              </div>
+              <h3>Bảng tin sản phẩm</h3>
+              <p>
+                Hiển thị danh sách tài liệu đang được rao bán với hình ảnh, giá
+                cả, tình trạng và thông tin người bán rõ ràng, cập nhật liên
+                tục.
+              </p>
+            </div>
+            <div class="feature-media">
+              <div class="phone-row">
+                <img src="/StudyShare/img/HomePage.png" alt="Feed 1" />
+                <img src="/StudyShare/img/PostDetail.png" alt="Feed 2" />
+              </div>
+            </div>
           </div>
-          <div class="feature-card">
-            <div class="icon-wrapper">🔍</div>
-            <h3>Tìm kiếm & Lọc thông minh</h3>
-            <p>
-              Tìm kiếm theo tên sách, môn học, khoa, giá cả và nhiều tiêu chí
-              khác để nhanh chóng tìm được tài liệu phù hợp.
-            </p>
+
+          <!-- Feature 2 -->
+          <div class="feature-item reverse">
+            <div class="feature-content">
+              <div class="feature-icon">
+                <i data-lucide="search"></i>
+              </div>
+              <h3>Danh mục & Tìm kiếm sản phẩm</h3>
+              <p>
+                Tìm kiếm nhanh theo tên sách, môn học, khoa và lọc theo danh mục
+                giúp người dùng tiếp cận đúng tài liệu cần thiết.
+              </p>
+            </div>
+            <div class="feature-media">
+              <div class="phone-row">
+                <img src="/StudyShare/img/Category.png" alt="Feed 1" />
+                <img src="/StudyShare/img/SearchPage.png" alt="Feed 2" />
+              </div>
+            </div>
           </div>
-          <div class="feature-card">
-            <div class="icon-wrapper">📂</div>
-            <h3>Danh mục phân loại</h3>
-            <p>
-              Duyệt tài liệu theo danh mục: Sách bài tập, Sách giáo khoa, Giáo
-              trình, Slide bài giảng được sắp xếp khoa học.
-            </p>
+
+          <!-- Feature 3 -->
+          <div class="feature-item">
+            <div class="feature-content">
+              <div class="feature-icon">
+                <i data-lucide="message-circle"></i>
+              </div>
+              <h3>Liên hệ trực tiếp</h3>
+              <p>
+                Cho phép người mua liên hệ trực tiếp với người bán để trao đổi,
+                thương lượng giá và thống nhất hình thức giao dịch thuận tiện.
+              </p>
+            </div>
+            <div class="feature-media">
+              <div class="phone-row">
+                <img src="/StudyShare/img/MessDetail.png" alt="Chi tiết chat" />
+                <img
+                  src="/StudyShare/img/MessageList.png"
+                  alt="Danh sách chat"
+                />
+              </div>
+            </div>
           </div>
-          <div class="feature-card">
-            <div class="icon-wrapper">📄</div>
-            <h3>Chi tiết bài viết đầy đủ</h3>
-            <p>
-              Xem thông tin hoàn chỉnh về sản phẩm: mô tả chi tiết, tình trạng,
-              combo ưu đãi, và thông tin người bán.
-            </p>
-          </div>
-          <div class="feature-card">
-            <div class="icon-wrapper">💬</div>
-            <h3>Liên hệ trực tiếp</h3>
-            <p>
-              Kết nối trực tiếp với người bán để trao đổi thông tin, thỏa thuận
-              giá cả và địa điểm giao dịch thuận tiện.
-            </p>
-          </div>
-          <div class="feature-card">
-            <div class="icon-wrapper">📝</div>
-            <h3>Đăng bài bán hàng</h3>
-            <p>
-              Tạo bài đăng bán tài liệu dễ dàng với biểu mẫu đơn giản, upload
-              hình ảnh và mô tả chi tiết sản phẩm.
-            </p>
+
+          <!-- Feature 4 -->
+          <div class="feature-item reverse">
+            <div class="feature-content">
+              <div class="feature-icon">
+                <i data-lucide="plus-square"></i>
+              </div>
+              <h3>Đăng bài bán hàng</h3>
+              <p>
+                Đăng bài bán tài liệu nhanh chóng với biểu mẫu đơn giản, hỗ trợ
+                upload hình ảnh và chỉnh sửa thông tin dễ dàng.
+              </p>
+            </div>
+            <div class="feature-media">
+              <div class="phone-row">
+                <img src="/StudyShare/img/CreatePost1.png" alt="Feed1" />
+                <img src="/StudyShare/img/CreatePost2.png" alt="Feed2" />
+                <img src="/StudyShare/img/CreatePost3.png" alt="Feed2" />
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -588,6 +627,7 @@
     </footer>
 
     <script>
+      lucide.createIcons();
       // Header scroll effect
       window.addEventListener("scroll", () => {
         const header = document.getElementById("header");
