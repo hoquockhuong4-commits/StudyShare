@@ -9,13 +9,48 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const cloudLeft = document.querySelector(".cloud-left");
+        const cloudRight = document.querySelector(".cloud-right");
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                // Thêm class animate khi element xuất hiện
+                cloudLeft.classList.add("animate");
+                cloudRight.classList.add("animate");
+
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          {
+            threshold: 0.3,
+          }
+        );
+
+        const cloudSection = document.querySelector(".cloud-section");
+        if (cloudSection) {
+          observer.observe(cloudSection);
+        }
+      });
+    </script>
   </head>
   <body>
     <!-- Header -->
     <header id="header">
       <nav>
-        <a href="#" class="logo">
-          <div class="logo-icon">📚</div>
+        <a href="#start" class="logo">
+          <div class="logo-icon">
+            <img
+              src="../StudyShare/img/my_img/logo.png"
+              style="width: 40px; height: auto"
+            />
+          </div>
+
           <span>StudyShare</span>
         </a>
         <ul class="nav-links">
@@ -30,7 +65,7 @@
 
     <!-- Hero Section -->
     <section class="hero">
-      <div class="hero-container">
+      <div id="start" class="hero-container">
         <div class="hero-content">
           <h1>
             Học tập thông minh<br />
@@ -42,33 +77,14 @@
             phí, lan tỏa tri thức, xây dựng cộng đồng học tập bền vững.
           </p>
           <div class="hero-buttons">
-            <a href="#features" class="btn btn-primary"> Khám phá ngay → </a>
+            <a href="#features" class="btn btn-primary"> Khám phá ngay</a>
             <a href="#solution" class="btn btn-secondary"> Tìm hiểu thêm </a>
           </div>
         </div>
         <div class="hero-image">
           <div class="hero-image-placeholder">
-            📱
-            <!-- Thêm hình ảnh app mockup tại đây -->
+            <img src="../StudyShare/img/my_img/onBoarding.png" />
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="stats-section">
-      <div class="stats-container">
-        <div class="stat-card">
-          <div class="stat-number">1000+</div>
-          <div class="stat-label">Sinh viên sử dụng</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">5000+</div>
-          <div class="stat-label">Tài liệu được chia sẻ</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">80%</div>
-          <div class="stat-label">Tiết kiệm chi phí</div>
         </div>
       </div>
     </section>
@@ -85,24 +101,59 @@
           </p>
         </div>
         <div class="problem-grid">
-          <div class="problem-card">
-            <div class="icon-wrapper">💸</div>
+          <div
+            class="problem-card"
+            style="background-color: rgb(255, 238, 234)"
+          >
+            <div class="icon-wrapper cost">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M12 2v20M7 7h8a3 3 0 010 6H9a3 3 0 000 6h8"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </div>
             <h3>Chi phí cao ngất ngưởng</h3>
             <p>
               Sinh viên phải chi tiêu nhiều cho sách giáo trình, tài liệu học
               tập mới, đặc biệt là những cuốn sách chỉ sử dụng trong một học kỳ.
             </p>
           </div>
-          <div class="problem-card">
-            <div class="icon-wrapper">📚</div>
+
+          <div
+            class="problem-card"
+            style="background-color: rgb(242, 235, 255)"
+          >
+            <div class="icon-wrapper waste">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M4 7h16M9 7V5h6v2M6 7l1 14h10l1-14"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </div>
             <h3>Tài liệu bị lãng phí</h3>
             <p>
               Sau khi học xong, rất nhiều tài liệu có giá trị bị bỏ không hoặc
               vứt đi thay vì được tái sử dụng hiệu quả.
             </p>
           </div>
-          <div class="problem-card">
-            <div class="icon-wrapper">🔍</div>
+
+          <div class="problem-card" style="background-color: #edfdfe">
+            <div class="icon-wrapper connect">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M16 11a4 4 0 01-8 0M2 12a10 10 0 0020 0"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </div>
             <h3>Khó tìm người mua/bán</h3>
             <p>
               Không có nền tảng tập trung để sinh viên dễ dàng kết nối với nhau
@@ -121,43 +172,71 @@
         </div>
         <div class="solution-content">
           <div class="solution-text">
-            <h2>Nền tảng kết nối thông minh</h2>
+            <h2>
+              Nền tảng kết nối sinh viên tại
+              <span style="color: rgb(252, 136, 101)">Đại học Bách Khoa</span>
+            </h2>
             <p>
               StudyShare là cầu nối giữa những người có nhu cầu mua và bán tài
               liệu học tập, tạo ra một hệ sinh thái bền vững cho cộng đồng sinh
               viên.
             </p>
             <div class="solution-features">
-              <div class="solution-feature">
-                <div class="solution-feature-icon">💰</div>
+              <div
+                class="solution-feature"
+                style="background: #fff3e8; border-radius: 12px; padding: 16px"
+              >
+                <div class="solution-feature-icon" style="color: #ff8c42">
+                  <svg viewBox="0 0 24 24" fill="none" width="32" height="32">
+                    <path
+                      d="M12 2v20M7 7h8a3 3 0 010 6H9a3 3 0 000 6h8"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </div>
                 <div class="solution-feature-content">
                   <h4>Tiết kiệm chi phí</h4>
-                  <p>
-                    Mua tài liệu đã qua sử dụng với giá hợp lý, giảm đến 70% so
-                    với mua mới
-                  </p>
+                  <p>Mua tài liệu đã qua sử dụng với giá hợp lý.</p>
                 </div>
               </div>
-              <div class="solution-feature">
-                <div class="solution-feature-icon">♻️</div>
+
+              <div
+                class="solution-feature"
+                style="background: #e8fff1; border-radius: 12px; padding: 16px"
+              >
+                <div class="solution-feature-icon" style="font-size: 32px">
+                  ♻️
+                </div>
                 <div class="solution-feature-content">
-                  <h4>Tái sử dụng bền vững</h4>
-                  <p>
-                    Kéo dài vòng đời của tài liệu học tập, bảo vệ môi trường
-                  </p>
+                  <h4>Tái sử dụng những dụng cụ học tập</h4>
+                  <p>Giảm lãng phí những học liệu đã không còn sử dụng.</p>
                 </div>
               </div>
-              <div class="solution-feature">
-                <div class="solution-feature-icon">🤝</div>
+
+              <div
+                class="solution-feature"
+                style="background: #e8f1ff; border-radius: 12px; padding: 16px"
+              >
+                <div class="solution-feature-icon" style="font-size: 32px">
+                  🤝
+                </div>
                 <div class="solution-feature-content">
                   <h4>Kết nối cộng đồng</h4>
                   <p>Xây dựng mạng lưới sinh viên hỗ trợ lẫn nhau</p>
                 </div>
               </div>
-              <div class="solution-feature">
-                <div class="solution-feature-icon">⚡</div>
+
+              <div
+                class="solution-feature"
+                style="background: #fffbe8; border-radius: 12px; padding: 16px"
+              >
+                <div class="solution-feature-icon" style="font-size: 32px">
+                  ⚡
+                </div>
                 <div class="solution-feature-content">
-                  <h4>Giao dịch nhanh chóng</h4>
+                  <h4>Trao đổi một cách nhanh chóng</h4>
                   <p>Tìm kiếm và liên hệ dễ dàng trong vài phút</p>
                 </div>
               </div>
@@ -165,8 +244,10 @@
           </div>
           <div class="solution-image">
             <div class="solution-image-placeholder">
-              📖
-              <!-- Thêm hình ảnh solution visual tại đây -->
+              <img
+                src="../StudyShare/img/my_img/logo.png"
+                style="width: 400px; height: auto"
+              />
             </div>
           </div>
         </div>
@@ -194,7 +275,7 @@
           </div>
           <div class="feature-card">
             <div class="icon-wrapper">🔍</div>
-            <h3>Tìm kiếm & Lọc thông minh</h3>
+            <h3>Tìm kiếm & Lọc theo từng danh mục gần gũi với sinh viên</h3>
             <p>
               Tìm kiếm theo tên sách, môn học, khoa, giá cả và nhiều tiêu chí
               khác để nhanh chóng tìm được tài liệu phù hợp.
@@ -255,7 +336,7 @@
           <div class="screen-card">
             <div class="screen-preview">🔍</div>
             <h3>Tìm kiếm</h3>
-            <p>Bộ lọc thông minh & Kết quả chính xác</p>
+            <p>Bộ lọc & Kết quả chính xác</p>
           </div>
           <div class="screen-card">
             <div class="screen-preview">📚</div>
@@ -316,8 +397,7 @@
         <div class="cta-content">
           <h2>Sẵn sàng tiết kiệm và chia sẻ?</h2>
           <p>
-            Tham gia cộng đồng StudyShare ngay hôm nay để trải nghiệm cách mua
-            bán tài liệu học tập thông minh
+            Tham gia cộng đồng StudyShare ngay hôm nay để cùng nhau xây dựng một cộng đồng lành mạnh dành cho sinh viên Bách Khoa
           </p>
           <div class="cta-buttons">
             <a href="#" class="btn btn-white">Tải ứng dụng ngay</a>
@@ -343,7 +423,9 @@
             target="_blank"
             class="link-card"
           >
-            <div class="link-card-icon">🎨</div>
+            <div class="link-card-icon">
+              <img src="../StudyShare/img/my_img/behance.png" alt="Behance" style="width:40px;height:40px;">
+            </div>
             <h3>Behance Case Study</h3>
             <p>
               Khám phá quy trình thiết kế, nghiên cứu người dùng và các lần lặp
@@ -356,7 +438,9 @@
             target="_blank"
             class="link-card"
           >
-            <div class="link-card-icon">🎯</div>
+            <div class="link-card-icon">
+              <img src="../StudyShare/img/my_img/figma.png" alt="Behance" style="width:40px;height:40px;">
+            </div>
             <h3>Figma Prototype</h3>
             <p>
               Tương tác với prototype độ trung thực cao và trải nghiệm toàn bộ
@@ -372,10 +456,16 @@
     <footer>
       <div class="footer-container">
         <div class="footer-logo">
-          <div class="logo-icon">📚</div>
+          <div class="logo-icon">
+            <img
+              src="../StudyShare/img/my_img/logo.png"
+              style="width: 40px; height: auto"
+            />
+          </div>
           StudyShare
         </div>
         <p class="footer-tagline">Chia sẻ để cùng tiến xa</p>
+
         <div class="footer-links">
           <a href="#problem">Vấn đề</a>
           <a href="#solution">Giải pháp</a>
@@ -383,10 +473,33 @@
           <a href="#screens">Giao diện</a>
           <a href="#links">Thiết kế</a>
         </div>
+
+        <div class="team-section">
+          <h3 class="team-title">Đội ngũ phát triển</h3>
+          <div class="team-members">
+            <div class="member-card leader">
+              <div class="member-id">2212956</div>
+              <div class="member-name">Trần Nam Sơn</div>
+            </div>
+            <div class="member-card">
+              <div class="member-id">2211709</div>
+              <div class="member-name">Hồ Quốc Khương</div>
+            </div>
+            <div class="member-card">
+              <div class="member-id">2213539</div>
+              <div class="member-name">Phạm Quốc Toàn</div>
+            </div>
+            <div class="member-card">
+              <div class="member-id">2210319</div>
+              <div class="member-name">Nguyễn Phúc Bình</div>
+            </div>
+          </div>
+        </div>
+
         <div class="footer-bottom">
           <p>
-            &copy; 2024 StudyShare. Được thiết kế với ❤️ cho cộng đồng sinh viên
-            Việt Nam
+            &copy; 2024 StudyShare. Được thiết kế cho cộng đồng sinh viên Bách
+            Khoa
           </p>
         </div>
       </div>
