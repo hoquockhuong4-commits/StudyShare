@@ -695,7 +695,7 @@ nav {
 }
 
 .user-card {
-  background: linear-gradient(135deg, var(--secondary), var(--primary));
+  background: rgb(251, 105, 33);
   padding: 3rem 2.5rem;
   border-radius: 24px;
   color: white;
